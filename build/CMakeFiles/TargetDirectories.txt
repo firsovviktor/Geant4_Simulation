@@ -1,0 +1,4 @@
+/home/viktor/sim/build/CMakeFiles/sim.dir
+/home/viktor/sim/build/CMakeFiles/Simulation.dir
+/home/viktor/sim/build/CMakeFiles/edit_cache.dir
+/home/viktor/sim/build/CMakeFiles/rebuild_cache.dir
