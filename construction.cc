@@ -38,48 +38,62 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 
     G4Tubs *solidScintillator = new G4Tubs("solidScintillator", 0.0*m, 0.036*m, 0.011*m, 0., 2*CLHEP::pi);
     G4LogicalVolume *logicScintillator = new G4LogicalVolume(solidScintillator, BGO, "logicScintillator");
-    G4VPhysicalVolume *physScintillator = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.001*m), logicScintillator, "physScintillator", logicWorld, false, 0, true);
+    G4VPhysicalVolume *physScintillator = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicScintillator, "physScintillator", logicWorld, false, 0, true);
 
     
-    //setting up Mirror properties
-    G4double ref = 0.3;
-    G4double reflectivity[8] = {ref, ref, ref, ref, ref, ref, ref, ref};
+    std::vector<G4double> pp = {2.038*eV, 4.144*eV};
+    //std::vector<G4double> specularlobe = {0.3, 0.3};
+    //std::vector<G4double> specularspike = {0.2, 0.2};
+    //std::vector<G4double> backscatter = {0.1, 0.1};
+    std::vector<G4double> rindex = {1.35, 1.40};
+    std::vector<G4double> reflectivity = {0.95, 0.95};
+    //std::vector<G4double> efficiency = {0.8, 0.1};
 
-    G4MaterialPropertiesTable* mptMirror = new G4MaterialPropertiesTable();
-    mptMirror->AddProperty("REFLECTIVITY", energy, reflectivity, 8);
+    G4MaterialPropertiesTable* SMPT = new G4MaterialPropertiesTable();
 
+    SMPT->AddProperty("RINDEX", pp, rindex);
+    //SMPT->AddProperty("SPECULARLOBECONSTANT", pp, specularlobe);
+    //SMPT->AddProperty("SPECULARSPIKECONSTANT", pp, specularspike);
+    //SMPT->AddProperty("BACKSCATTERCONSTANT", pp, backscatter);
+    SMPT->AddProperty("REFLECTIVITY", pp, reflectivity);
+    //SMPT->AddProperty("EFFICIENCY", pp, efficiency);
+
+
+/*
     //debug mirror
     G4Box *solidDebug = new G4Box("solidDebug", 0.10*m, 0.10*m, 0.005*m);
     G4LogicalVolume *logicDebug = new G4LogicalVolume(solidDebug, Al, "logicDebug");
     G4VPhysicalVolume *physDebug = new G4PVPlacement(0, G4ThreeVector(0., 0., -0.1*m), logicDebug, "physScintillator", logicWorld, false, 0, true);
 
-    G4OpticalSurface* opDebugSurface = new G4OpticalSurface("DebugSurface");
-    opDebugSurface->SetType(dielectric_dielectric);
-    opDebugSurface->SetFinish(polished);
-    opDebugSurface->SetModel(glisur);
+    G4OpticalSurface* OpSurface = new G4OpticalSurface("name");
 
-    G4LogicalBorderSurface* SurfaceDebug = new G4LogicalBorderSurface("SurfaceDebug", physDebug, physWorld, opDebugSurface);
+    G4LogicalSkinSurface* Surface = new
+    G4LogicalSkinSurface("name",logicDebug,OpSurface);
 
-    G4OpticalSurface* opticalDebug = dynamic_cast<G4OpticalSurface*>(SurfaceDebug->GetSurface(physDebug, physWorld)->GetSurfaceProperty());
-  
-    opDebugSurface->SetMaterialPropertiesTable(mptMirror);
+    OpSurface->SetType(dielectric_dielectric);
+    OpSurface->SetModel(unified);
+    OpSurface->SetFinish(polishedbackpainted);
+    OpSurface->SetMaterialPropertiesTable(SMPT);
     //debug mirror
+*/
 
+
+       
     //Setting up side mirror
     G4Tubs *solidMirror1 = new G4Tubs("solid", 0.0355*m, 0.036*m, 0.011*m, 0., 2*CLHEP::pi);
     G4LogicalVolume *logicMirror1 = new G4LogicalVolume(solidMirror1, Al, "logicMirror1");
     G4VPhysicalVolume *physMirror1 = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMirror1, "physMirror1", logicScintillator, false, 0, true); 
 
     G4OpticalSurface* opMirror1Surface = new G4OpticalSurface("Mirror1Surface");
+
+    G4LogicalSkinSurface* SurfaceMirror1 = new 
+    G4LogicalSkinSurface("SurfaceMirror1", logicMirror1, opMirror1Surface);
+
     opMirror1Surface->SetType(dielectric_dielectric);
-    opMirror1Surface->SetFinish(polished);
-    opMirror1Surface->SetModel(glisur);
+    opMirror1Surface->SetFinish(polishedbackpainted);
+    opMirror1Surface->SetModel(unified);
+    opMirror1Surface->SetMaterialPropertiesTable(SMPT);
 
-    G4LogicalBorderSurface* SurfaceMirror1 = new G4LogicalBorderSurface("SurfaceMirror1", physMirror1, physScintillator, opMirror1Surface);
-
-    G4OpticalSurface* opticalSurface1 = dynamic_cast<G4OpticalSurface*>(SurfaceMirror1->GetSurface(physMirror1, physScintillator)->GetSurfaceProperty());
-  
-    opMirror1Surface->SetMaterialPropertiesTable(mptMirror);
 
     //Setting up base mirror
     G4Tubs *solidMirror2 = new G4Tubs("solid", 0.0*m, 0.0355*m, 0.00025*m, 0., 2*CLHEP::pi);
@@ -87,14 +101,29 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
     G4VPhysicalVolume *physMirror2 = new G4PVPlacement(0, G4ThreeVector(0., 0., -0.011*m+0.00025*m), logicMirror2, "physMirror2", logicScintillator, false, 0, true); 
 
     G4OpticalSurface* opMirror2Surface = new G4OpticalSurface("Mirror2Surface");
+
+    G4LogicalSkinSurface* SurfaceMirror2 = new 
+    G4LogicalSkinSurface("SurfaceMirror2", logicMirror2, opMirror2Surface);
+
     opMirror2Surface->SetType(dielectric_dielectric);
-    opMirror2Surface->SetFinish(polished);
-    opMirror2Surface->SetModel(glisur);
+    opMirror2Surface->SetFinish(polishedbackpainted);
+    opMirror2Surface->SetModel(unified);
+    opMirror2Surface->SetMaterialPropertiesTable(SMPT);
+    
+    //PMT construction
 
-    G4LogicalBorderSurface* SurfaceMirror2 = new G4LogicalBorderSurface("SurfaceMirror2", physMirror2, physScintillator, opMirror2Surface);
+    G4Tubs *solidDetector = new G4Tubs("SolidDetector", 0.0*m, 0.035*m, 0.05*m, 0., 2*CLHEP::pi);
+    logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector");
+    G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., (0.011+0.05+0.001)*m), logicDetector, "physDetector", logicWorld, false, 0, true);
 
-    G4OpticalSurface* opticalSurface2 = dynamic_cast<G4OpticalSurface*>(SurfaceMirror2->GetSurface(physMirror2, physScintillator)->GetSurfaceProperty());
-  
-    opMirror2Surface->SetMaterialPropertiesTable(mptMirror);
+
     return physWorld;
+}
+
+void MyDetectorConstruction::ConstructSDandField()
+{
+    MySensitiveDetector *sensDet = new 
+    MySensitiveDetector("SensitiveDetector");
+
+    logicDetector->SetSensitiveDetector(sensDet);
 }

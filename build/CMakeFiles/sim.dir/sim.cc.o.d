@@ -638,6 +638,72 @@ CMakeFiles/sim.dir/sim.cc.o: /home/viktor/sim/sim.cc \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4LogicalBorderSurface.icc \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4LogicalSkinSurface.hh \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4LogicalSkinSurface.icc \
+ /home/viktor/sim/detector.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VSensitiveDetector.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VReadOutGeometry.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4SensitiveVolumeList.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4CollectionNameVector.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VSDFilter.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4AnalysisManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4GenericAnalysisManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4ToolsAnalysisManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VAnalysisManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4AnalysisManagerState.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4AnalysisVerbose.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VTBaseHnManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4HnInformation.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4AnalysisUtilities.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4BinScheme.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4Fcn.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VAnalysisManager.icc \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4HnManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4BaseAnalysisManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4NtupleBookingManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/ntuple_booking \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/cids \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/cid \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/typedefs \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/forit \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4NtupleBookingManager.icc \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VNtupleManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VFileManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4BaseFileManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VTHnFileManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4TH1ToolsManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4THnToolsManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4THnManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4THnManager.icc \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4THnMessenger.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4THnToolsManager.icc \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4THnMessenger.icc \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4Tokenizer.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4TH2ToolsManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4TH3ToolsManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4TP1ToolsManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4TP2ToolsManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/h1d \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/h1 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/b1 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/base_histo \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/histo_data \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/axes \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/axis \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/eqT \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/h2d \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/h2 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/b2 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/h3d \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/h3 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/b3 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/p1d \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/p1 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/profile_data \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/p2d \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/tools/histo/p2 \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4ToolsAnalysisManager.icc \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4GenericAnalysisManager.icc \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4GenericFileManager.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4GenericFileManager.icc \
  /home/viktor/sim/physics.hh \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VModularPhysicsList.hh \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VPhysicsConstructor.hh \
@@ -712,4 +778,6 @@ CMakeFiles/sim.dir/sim.cc.o: /home/viktor/sim/sim.cc \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4ParticleGun.hh \
  /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4VPrimaryGenerator.hh \
- /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4ParticleTable.hh
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4ParticleTable.hh \
+ /home/viktor/sim/run.hh \
+ /home/viktor/software/geant4/geant4-v11.1.2-install/include/Geant4/G4UserRunAction.hh
